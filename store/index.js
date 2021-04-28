@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 const store = () => new Vuex.Store({
     state: {
-        fristid: ''
+        fristid: '',
+        homeList: []
     },
     mutations: {
         setfristid(state, id) {

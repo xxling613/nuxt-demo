@@ -2,11 +2,13 @@
   <div>
     <h5 class="head">这是默认头部</h5>
     <div class="main">
-        <nuxt-link to="/">首页</nuxt-link>
-        <nuxt-link to="/home">HOME</nuxt-link>
-        <nuxt-link to="/order">order</nuxt-link>
-        <nuxt-link to="/goods">商品列表</nuxt-link>
-        <nuxt-link to="/userinfo">个人</nuxt-link>
+        <nuxt-link to="/" exact-active-class="nav-heade">首页</nuxt-link>
+        <nuxt-link to="/home" active-class="nav-heade">HOME</nuxt-link>
+        <nuxt-link to="/order" active-class="nav-heade">order</nuxt-link>
+        <nuxt-link to="/goods" active-class="nav-heade">商品列表</nuxt-link>
+        <nuxt-link to="/userinfo" active-class="nav-heade">个人</nuxt-link>
+        <nuxt-link to="/login" active-class="nav-heade">登录</nuxt-link>
+        <nuxt-link to="/register" active-class="nav-heade">注册</nuxt-link>
     </div>
     <Nuxt />
     <h5 class="foot">这是默认顶部</h5>
@@ -14,7 +16,9 @@
 </template>
 
 <script>
-    export default {}
+    export default {
+        loading: false,
+    }
 </script>
 
 <style>
@@ -34,6 +38,10 @@
         bottom: 0;
         margin-top: 20px;
     } */
+    
+    .nav-heade {
+        background: palevioletred;
+    }
     
     .page-enter-active,
     .page-leave-active {

@@ -20,9 +20,14 @@
         post
     } from '~/plugins/axios.js'
     export default {
-        async asyncData(ctx) {
-            let data = await ctx.$axios.get('videoCategory')
+        loading: false,
+        async asyncData({
+            app,
+            store
+        }) {
+            let data = await app.$axios.get('videoCategory')
                 // ctx.$store.commit('setfristid', data.data.result.itemList[0].data.id)
+            store.state.fristid = data.data.result.itemList[0].data.id;
             return {
                 list: data.data.result.itemList,
             }

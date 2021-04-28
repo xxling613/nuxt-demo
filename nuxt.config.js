@@ -16,11 +16,18 @@ export default {
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
-    css: [],
+    css: [
+
+    ],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
-        '~/plugins/axios'
+        '~/plugins/axios',
+        '~/plugins/time',
+        {
+            src: '~/plugins/bootstrap',
+            ssr: true
+        }
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
@@ -33,7 +40,8 @@ export default {
     modules: [
         // https://go.nuxtjs.dev/bootstrap
         'bootstrap-vue/nuxt',
-        '@nuxtjs/axios'
+        '@nuxtjs/axios',
+        'bootstrap-vue/nuxt'
     ],
     publicRuntimeConfig: {
         axios: {
@@ -57,5 +65,16 @@ export default {
     //     }
     // },
     // Build Configuration: https://go.nuxtjs.dev/config-build
-    build: {}
+    build: {},
+    // router: {
+    //     // 扩展路由
+    //     extendRoutes(routes, resolve) {
+    //         routes.push({
+    //             name: 'index',
+    //             path: '/',
+    //             component: resolve(__dirname, 'pages/index.vue')
+    //         })
+    //     }
+    // },
+    loading: '~/components/loading.vue'
 }
